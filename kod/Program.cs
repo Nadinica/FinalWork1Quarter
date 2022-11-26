@@ -3,12 +3,37 @@
 //Первоначальный массив можно ввести с клавиатуры, либо задать на старте выполнения алгоритма.
 
 
-string[] array = { "H", "e", "l", "l", "o" };
-int count = 3;
-for (int i = 0; i < count; i++)
+string[] array = { "Hi", "Hel", "ll", "l", "o" };
+string[] FindSringLength(string[] array)
 {
-    Console.Write($"{array[i]} ");
+    int length = 3;
+    int count = 0;
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i].Length <= length)
+        {
+            count++;
+        }
+    }
+
+    int index = 0;
+    string[] newarray = new string[count];
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i].Length <= length)
+        {
+            newarray[index] = array[i];
+            index++;
+        }
+    }
+    return newarray;
 }
+string[] newarray = FindSringLength(array);
+for (int i = 0; i < newarray.Length; i++)
+{
+    Console.Write($"{newarray[i]} ");
+}
+
 
 
 
